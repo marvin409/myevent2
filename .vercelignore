@@ -1,0 +1,8 @@
+# Ignore local and build artifacts during Vercel deploys
+node_modules/
+.venv-deploy/
+.vscode/
+.git/
+__pycache__/
+*.log
+*.env

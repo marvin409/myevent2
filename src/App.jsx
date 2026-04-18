@@ -86,7 +86,26 @@ export default function App() {
           : [],
       });
     } catch (error) {
-      setLoadError(error.message || "Unable to load event data.");
+      // Fallback to demo data when API is unavailable
+      console.error("Dashboard load error:", error);
+      setEvents([
+        {
+          id: 1,
+          title: "Demo Event",
+          description: "This is a demo event. Connect your API to see real events.",
+          date: new Date().toISOString(),
+          location: "Demo Location",
+          is_featured: true,
+          is_public: true,
+        }
+      ]);
+      setStats({
+        total_events: 1,
+        featured_events: 1,
+        public_events: 1,
+        conversion_hooks: [],
+      });
+      setLoadError("Demo mode: API unavailable");
     } finally {
       setIsLoading(false);
     }

@@ -44,7 +44,9 @@ export default function AppShell({
           </div>
         </header>
         <SpotlightMarquee />
-        {children}
+        <main>
+          {children}
+        </main>
         <DeveloperFooter />
       </div>
     </div>

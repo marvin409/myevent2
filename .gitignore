@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.vscode/
+.venv-deploy/
+__pycache__/
+*.log
+*.env
